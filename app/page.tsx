@@ -7,7 +7,6 @@ import { CategoryRow } from "@/components/category-row"
 import { ProductGrid } from "@/components/product-grid"
 import { DealsBanner } from "@/components/deals-banner"
 import { Footer } from "@/components/footer"
-import { AIChatAssistant } from "@/components/ai-chat-assistant"
 import { RecommendationsSection } from "@/components/recommendations-section"
 import { RecentlyViewed } from "@/components/recently-viewed"
 
@@ -82,7 +81,6 @@ export default function HomePage() {
         <RecommendationsSection />
       </main>
       <Footer />
-      <AIChatAssistant />
     </div>
   )
 }

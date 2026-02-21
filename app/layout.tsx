@@ -46,9 +46,9 @@ export default function RootLayout({
           <CartSidebarProvider>
             {children}
             <WelcomeModal />
+            <AIChatAssistant />
           </CartSidebarProvider>
         </AuthProvider>
-        <AIChatAssistant />
       </body>
     </html>
   )
