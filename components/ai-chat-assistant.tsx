@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react"
 import { MessageCircle, X, Send, Sparkles, Loader, Star, Mic, Volume2, Copy, RotateCcw } from "lucide-react"
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+
 interface ChatMessage {
   role: "user" | "assistant"
   content: string
@@ -104,7 +106,7 @@ export function AIChatAssistant() {
   // Detect language from text
   const detectLanguage = async (text: string): Promise<string> => {
     try {
-      const response = await fetch("/api/assistant/detect-language", {
+      const response = await fetch(`${BACKEND_URL}/api/assistant/detect-language`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text })
@@ -126,7 +128,7 @@ export function AIChatAssistant() {
   const translateText = async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
     if (sourceLang === targetLang) return text
     try {
-      const response = await fetch("/api/assistant/translate", {
+      const response = await fetch(`${BACKEND_URL}/api/assistant/translate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, sourceLang, targetLang })
@@ -214,7 +216,7 @@ export function AIChatAssistant() {
       // Try enhanced endpoint first, fallback to standard chat
       let response
       try {
-        response = await fetch("/api/assistant/chat-enhanced", {
+        response = await fetch(`${BACKEND_URL}/api/assistant/chat-enhanced`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -229,7 +231,7 @@ export function AIChatAssistant() {
         })
       } catch (e) {
         // Fallback to standard chat endpoint
-        response = await fetch("/api/assistant/chat", {
+        response = await fetch(`${BACKEND_URL}/api/assistant/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
