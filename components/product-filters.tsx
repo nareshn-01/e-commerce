@@ -215,9 +215,9 @@ export function ProductFilters({
         {expandedSections.brand && (
           <div className="mt-3 space-y-2">
             {brands.slice(0, 6).map((brand) => (
-              <label key={brand} className="flex items-center gap-2 cursor-pointer">
+              <label key={brand.id} className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" className="h-4 w-4 rounded border-border text-primary focus:ring-primary/20" />
-                <span className="text-sm text-muted-foreground hover:text-foreground">{brand}</span>
+                <span className="text-sm text-muted-foreground hover:text-foreground">{brand.name}</span>
               </label>
             ))}
           </div>
