@@ -1,0 +1,62 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+startup.log
+backend.log
+
+# Test images
+real_test_images/
+
+# Virtual Try-On temporary files
+data/virtual_tryon/person/*
+data/virtual_tryon/cloth/*
+data/virtual_tryon/output/*
+!data/virtual_tryon/person/.gitkeep
+!data/virtual_tryon/cloth/.gitkeep
+!data/virtual_tryon/output/.gitkeep
+
+# Model checkpoints
+data/model_checkpoints/*.pth
+data/model_checkpoints/*.pt
